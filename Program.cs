@@ -28,7 +28,19 @@ namespace BinarySearchTree
             Console.WriteLine("inorder traversal of binary tree :");
             Obj.InorderTravalsal(Obj.root);
             Console.WriteLine("\n");
-            Console.WriteLine("Size of BST: " + Obj.Size(Obj.root));
+
+            Console.WriteLine("enter the data to be search :");
+
+            int search=Convert.ToInt32(Console.ReadLine());
+            Node node = Obj.Search(63);
+            if (node == null)
+            {
+                Console.WriteLine("Node not found");
+            }
+            else
+            {
+                Console.WriteLine("Node found: " + node.data);
+            }
             Console.Read();
         }
     }

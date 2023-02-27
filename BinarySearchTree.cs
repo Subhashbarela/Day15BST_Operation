@@ -61,15 +61,25 @@ namespace BinarySearchTree
             }
            
         }
-        public int Size(Node node)
+       
+        public Node Search(int data)
         {
-            if (node == null)
+            return Search(root, data);
+        }
+
+        private Node Search(Node node, int data)
+        {
+            if (node == null || node.data == data)
             {
-                return 0;
+                return node;
+            }
+            else if (data < node.data)
+            {
+                return Search(node.left, data);
             }
             else
             {
-                return Size(node.left) + 1 + Size(node.right);
+                return Search(node.right, data);
             }
         }
     }
