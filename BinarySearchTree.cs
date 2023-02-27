@@ -54,10 +54,22 @@ namespace BinarySearchTree
             if(node !=null)
             {
                 InorderTravalsal(node.left);
-                Console.WriteLine(node.data+" ");
+                Console.Write(node.data+" ");
                 InorderTravalsal(node.right);
 
 
+            }
+           
+        }
+        public int Size(Node node)
+        {
+            if (node == null)
+            {
+                return 0;
+            }
+            else
+            {
+                return Size(node.left) + 1 + Size(node.right);
             }
         }
     }
